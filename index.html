@@ -1,101 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anastasia Mashina | Ecologist & Speaker</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              brand: {
-                black: '#111111',
-                mint: '#00D2A0',
-                yellow: '#FDCB58',
-                grey: '#2A2A2A',
-              }
-            },
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              display: ['Syne', 'sans-serif'],
-            },
-            borderRadius: {
-              'xl': '1rem',
-              '2xl': '1.5rem',
-              '3xl': '2rem',
-            },
-            animation: {
-              'neon-pulse': 'neon-flash 6s infinite',
-            }
-          }
-        }
-      }
-    </script>
-    <style>
-      body {
-        background-color: #111111;
-        color: #ffffff;
-      }
-      .hide-scrollbar::-webkit-scrollbar {
-        display: none;
-      }
-      .hide-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-      
-      .text-shadow-glow {
-        text-shadow: 0 0 10px rgba(0, 210, 160, 0.5);
-      }
 
-      /* Neon Flash Animation */
-      @keyframes neon-flash {
-        0%, 90% {
-          filter: grayscale(1) opacity(0.4) drop-shadow(0 0 0 transparent);
-          transform: scale(1);
-        }
-        92% {
-          filter: grayscale(0) opacity(1) drop-shadow(0 0 10px var(--neon-color));
-          transform: scale(1.05);
-        }
-        94% {
-          filter: grayscale(1) opacity(0.4) drop-shadow(0 0 0 transparent);
-          transform: scale(1);
-        }
-        96% {
-          filter: grayscale(0) opacity(1) drop-shadow(0 0 15px var(--neon-color));
-          transform: scale(1.02);
-        }
-        100% {
-          filter: grayscale(1) opacity(0.4) drop-shadow(0 0 0 transparent);
-          transform: scale(1);
-        }
-      }
-
-      .animate-neon-random {
-        animation-name: neon-flash;
-        animation-iteration-count: infinite;
-      }
-    </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.4",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
-    "framer-motion": "https://esm.sh/framer-motion@^12.34.0"
-  }
-}
-</script>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anastasia Mashina | Ecologist & Speaker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&display=swap"
+    rel="stylesheet">
 </head>
-  <body>
-    <div id="root"></div>
-  </body>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
 </html>

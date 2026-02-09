@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLanguage } from '../LanguageContext';
+import { useLanguage } from '../../context/LanguageContext';
 
 const photos = [
   { id: 1, src: "https://picsum.photos/id/1011/600/800", alt: "Kayaking", type: "casual" },
@@ -22,14 +22,14 @@ export const Gallery: React.FC = () => {
         <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
           {photos.map((photo) => (
             <div key={photo.id} className="break-inside-avoid relative group rounded-[1.5rem] overflow-hidden border border-white/10 bg-[#1a1a1a]">
-              
+
               {/* Image */}
-              <img 
-                src={photo.src} 
-                alt={photo.alt} 
+              <img
+                src={photo.src}
+                alt={photo.alt}
                 className="w-full h-auto object-cover transition-all duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100 grayscale group-hover:grayscale-0"
               />
-              
+
               {/* Tech Overlay corners */}
               <div className="absolute top-4 left-4 w-2 h-2 border-t border-l border-white/50 opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="absolute top-4 right-4 w-2 h-2 border-t border-r border-white/50 opacity-0 group-hover:opacity-100 transition-opacity" />
