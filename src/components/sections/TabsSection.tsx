@@ -22,50 +22,54 @@ export const TabsSection: React.FC = () => {
                </div>
             </div>
 
-            {/* 1. Tracks Grid */}
-            <div className="grid md:grid-cols-3 gap-6 mb-12">
-               {/* Track 1 */}
+            {/* 1. Tracks Grid - 4 Items */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+               {/* Track 1: Ecosystem */}
                <div className={cardStyle}>
-                  {/* Hover Glow */}
                   <div className="absolute top-0 right-0 w-32 h-32 bg-brand-mint/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
                   <div className={`${iconBoxStyle} text-brand-mint shadow-[0_0_15px_rgba(0,210,160,0.1)]`}>
-                     <Mic2 className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-2xl font-display font-bold text-white mb-2 relative z-10">{t.tracks.track_1}</h3>
-                  <p className="text-sm text-gray-400 leading-relaxed relative z-10">{t.tracks.track_1_desc}</p>
-
-                  <ArrowUpRight className="absolute top-8 right-8 text-gray-600 group-hover:text-white transition-colors" />
-               </div>
-
-               {/* Track 2 */}
-               <div className={cardStyle}>
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-brand-yellow/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                  <div className={`${iconBoxStyle} text-brand-yellow shadow-[0_0_15px_rgba(253,203,88,0.1)]`}>
-                     <FlaskConical className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-2xl font-display font-bold text-white mb-2 relative z-10">{t.tracks.track_2}</h3>
-                  <p className="text-sm text-gray-400 leading-relaxed relative z-10">{t.tracks.track_2_desc}</p>
-
-                  <ArrowUpRight className="absolute top-8 right-8 text-gray-600 group-hover:text-white transition-colors" />
-               </div>
-
-               {/* Track 3 */}
-               <div className={cardStyle}>
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                  <div className={`${iconBoxStyle} text-purple-400 shadow-[0_0_15px_rgba(168,85,247,0.1)]`}>
                      <Users className="w-6 h-6" />
                   </div>
-                  <h3 className="text-2xl font-display font-bold text-white mb-2 relative z-10">{t.tracks.track_3}</h3>
-                  <p className="text-sm text-gray-400 leading-relaxed relative z-10">{t.tracks.track_3_desc}</p>
+                  <h3 className="text-xl font-display font-bold text-white mb-2 relative z-10">{t.tracks.track_1}</h3>
+                  <p className="text-sm text-gray-400 leading-relaxed relative z-10">{t.tracks.track_1_desc}</p>
+                  <ArrowUpRight className="absolute top-8 right-8 text-gray-600 group-hover:text-white transition-colors" />
+               </div>
 
+               {/* Track 2: Ya v dele */}
+               <div className={cardStyle}>
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-brand-yellow/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className={`${iconBoxStyle} text-brand-yellow shadow-[0_0_15px_rgba(253,203,88,0.1)]`}>
+                     <Mic2 className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-display font-bold text-white mb-2 relative z-10">{t.tracks.track_2}</h3>
+                  <p className="text-sm text-gray-400 leading-relaxed relative z-10">{t.tracks.track_2_desc}</p>
+                  <ArrowUpRight className="absolute top-8 right-8 text-gray-600 group-hover:text-white transition-colors" />
+               </div>
+
+               {/* Track 3: EcoCareer Lab */}
+               <div className={cardStyle}>
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className={`${iconBoxStyle} text-purple-400 shadow-[0_0_15px_rgba(168,85,247,0.1)]`}>
+                     <FlaskConical className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-display font-bold text-white mb-2 relative z-10">{t.tracks.track_3}</h3>
+                  <p className="text-sm text-gray-400 leading-relaxed relative z-10">{t.tracks.track_3_desc}</p>
+                  <ArrowUpRight className="absolute top-8 right-8 text-gray-600 group-hover:text-white transition-colors" />
+               </div>
+
+               {/* Track 4: RUDN NSO */}
+               <div className={cardStyle}>
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className={`${iconBoxStyle} text-blue-400 shadow-[0_0_15px_rgba(96,165,250,0.1)]`}>
+                     <Users className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-display font-bold text-white mb-2 relative z-10">{t.tracks.track_4}</h3>
+                  <p className="text-sm text-gray-400 leading-relaxed relative z-10">{t.tracks.track_4_desc}</p>
                   <ArrowUpRight className="absolute top-8 right-8 text-gray-600 group-hover:text-white transition-colors" />
                </div>
             </div>
 
-            {/* 2. Featured Project Banner - Unified Tech Look */}
+            {/* 2. Key Directions (Featured) */}
             <motion.div
                initial={{ opacity: 0, y: 20 }}
                whileInView={{ opacity: 1, y: 0 }}
@@ -93,25 +97,15 @@ export const TabsSection: React.FC = () => {
                   </div>
 
                   <div className="relative min-h-[300px] lg:min-h-full bg-[#1A1A1A] overflow-hidden">
-                     {/* Tech Grid Overlay on Image */}
                      <div className="absolute inset-0 z-10 bg-[linear-gradient(rgba(0,0,0,0.5)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.5)_1px,transparent_1px)] bg-[size:40px_40px] opacity-20 pointer-events-none" />
 
                      <img
                         src="https://picsum.photos/id/122/800/800"
-                        alt="EcoCareer"
+                        alt="ESG Projects"
                         className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-luminosity group-hover:scale-105 group-hover:opacity-70 transition-all duration-700"
                      />
 
                      <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#111]/50 to-[#111]" />
-
-                     {/* Floating UI Element */}
-                     <div className="absolute bottom-8 right-8 bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-white/10 z-20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                        <div className="flex -space-x-3">
-                           <div className="w-10 h-10 rounded-full bg-gray-800 border-2 border-black" />
-                           <div className="w-10 h-10 rounded-full bg-gray-700 border-2 border-black" />
-                           <div className="w-10 h-10 rounded-full bg-gray-600 border-2 border-black flex items-center justify-center text-[10px] text-white font-bold">+500</div>
-                        </div>
-                     </div>
                   </div>
                </div>
             </motion.div>

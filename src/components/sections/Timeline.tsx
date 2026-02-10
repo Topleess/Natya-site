@@ -5,47 +5,17 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '../common/Button';
 
 // Mock data to map translation indices to rich content (Images/Descriptions)
-const awardDetails = [
-  {
-    img: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=800&auto=format&fit=crop",
-    date: "2023",
-    desc: "Awarded for the development of an AI-driven ecological monitoring system used in 5 regions."
-  },
-  {
-    img: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=800&auto=format&fit=crop",
-    date: "2022",
-    desc: "Top 10 finalist out of 10,000 participants in the national student competition 'Tvoy Khod'."
-  },
-  {
-    img: "https://images.unsplash.com/photo-1611329535800-473d09292d37?q=80&w=800&auto=format&fit=crop",
-    date: "2021 & 2023",
-    desc: "Received gold medals for academic excellence and contribution to university research."
-  },
-  {
-    img: "https://images.unsplash.com/photo-1544531586-fde5298cdd40?q=80&w=800&auto=format&fit=crop",
-    date: "2023",
-    desc: "Graduated with honors from RUDN University, Department of Ecology and Environmental Safety."
-  },
-  {
-    img: "https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=800&auto=format&fit=crop",
-    date: "2020-Present",
-    desc: "Led regional initiatives involving over 500 volunteers in clean-up and planting events."
-  },
-  {
-    img: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800&auto=format&fit=crop",
-    date: "2022",
-    desc: "Winner of the 'Best Youth Science Project' for innovative waste management solutions."
-  },
-  {
-    img: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop",
-    date: "2021",
-    desc: "Established a network of 20+ partner organizations for student internships."
-  },
-  {
-    img: "https://images.unsplash.com/photo-1475721027767-4d06cdd3080e?q=80&w=800&auto=format&fit=crop",
-    date: "2023",
-    desc: "Recognized as 'Best Speaker' at the International Youth Forum for clarity and impact."
-  }
+// Mock data for images only - descriptions come from translations
+const awardImages = [
+  "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1611329535800-473d09292d37?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1544531586-fde5298cdd40?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1475721027767-4d06cdd3080e?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1475721027767-4d06cdd3080e?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800&auto=format&fit=crop"
 ];
 
 export const Timeline: React.FC = () => {
@@ -135,7 +105,7 @@ export const Timeline: React.FC = () => {
                 {/* Image Section */}
                 <div className="h-64 md:h-auto relative bg-[#1A1A1A]">
                   <img
-                    src={awardDetails[selectedAward % awardDetails.length].img}
+                    src={awardImages[selectedAward % awardImages.length]}
                     alt="Achievement"
                     className="absolute inset-0 w-full h-full object-cover opacity-80"
                   />
@@ -146,7 +116,7 @@ export const Timeline: React.FC = () => {
                 <div className="p-8 flex flex-col justify-center">
                   <div className="flex items-center gap-2 mb-4 text-brand-mint text-xs font-bold uppercase tracking-widest">
                     <Calendar className="w-4 h-4" />
-                    {awardDetails[selectedAward % awardDetails.length].date}
+                    {t.awards.details[selectedAward % t.awards.details.length].date}
                   </div>
 
                   <h3 className="text-2xl font-display font-bold text-white mb-4 leading-tight">
@@ -154,7 +124,7 @@ export const Timeline: React.FC = () => {
                   </h3>
 
                   <p className="text-gray-400 text-sm leading-relaxed mb-8">
-                    {awardDetails[selectedAward % awardDetails.length].desc}
+                    {t.awards.details[selectedAward % t.awards.details.length].desc}
                   </p>
 
                   <div className="flex gap-3">

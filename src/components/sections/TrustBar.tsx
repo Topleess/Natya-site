@@ -1,74 +1,64 @@
 import React from 'react';
 import { useLanguage } from '../../context/LanguageContext';
-import {
-  Leaf,
-  Globe,
-  Users,
-  Star,
-  Rocket,
-  GraduationCap,
-  Briefcase,
-  Building2,
-  Flag,
-  BookOpen,
-  Footprints,
-  Send
-} from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const partners = [
-  { name: "ROSMOLODEZH", color: "#00D2A0", icon: Flag },
-  { name: "ZNANIE SOCIETY", color: "#3366CC", icon: BookOpen },
-  { name: "RANEPA", color: "#D92121", icon: Building2 },
-  { name: "TVOY KHOD", color: "#7050E5", icon: Footprints },
-  { name: "ECOSYSTEM", color: "#76C908", icon: Leaf },
-  { name: "MY UNI", color: "#9D4EDD", icon: GraduationCap },
-  { name: "YA PROFI", color: "#F2994A", icon: Rocket },
-  { name: "PRO MENTOR", color: "#2F80ED", icon: Send },
-  { name: "ROSCONGRESS", color: "#EB2D2E", icon: Globe },
-  { name: "YA V DELE", color: "#00B5AD", icon: Briefcase },
-  { name: "COLLECTORS CLUB", color: "#E53935", icon: Star },
-  { name: "STUDENT LEADERS", color: "#FDCB58", icon: Users },
+  "/images/partners/partner-1.jpg",
+  "/images/partners/partner-2.jpg",
+  "/images/partners/partner-3.jpg", // Corrected extension based on list
+  "/images/partners/partner-4.jpg",
+  "/images/partners/partner-5.jpg",
+  "/images/partners/partner-6.jpg",
+  "/images/partners/partner-7.jpg",
+  "/images/partners/partner-8.jpg",
+  "/images/partners/partner-9.jpg",
+  "/images/partners/partner-10.png",
+  "/images/partners/partner-11.jpg",
+  "/images/partners/partner-12.png",
+  "/images/partners/partner-13.jpg",
+  "/images/partners/partner-14.jpg",
+  "/images/partners/partner-15.png",
+  "/images/partners/partner-16.jpg",
 ];
 
 export const TrustBar: React.FC = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="bg-[#111] border-y border-white/5 relative z-10 overflow-hidden">
-      <div className="container mx-auto px-4 py-16">
-        <p className="text-center text-xs text-gray-600 uppercase tracking-[0.3em] mb-12 font-bold font-display">
+    <section className="bg-[#111] border-y border-white/5 relative z-10 overflow-hidden py-12">
+      <div className="container mx-auto px-4 mb-8">
+        <p className="text-center text-xs text-gray-600 uppercase tracking-[0.3em] font-bold font-display">
           {t.partners}
         </p>
+      </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 md:gap-12">
-          {partners.map((partner, index) => (
-            <div
-              key={index}
-              className="group flex flex-col items-center justify-center p-4 cursor-default"
-            >
-              <div
-                className="relative h-16 w-full flex items-center justify-center transition-all duration-300"
-              >
-                <partner.icon
-                  strokeWidth={1.5}
-                  className="h-10 w-10 md:h-12 md:w-12 object-contain text-gray-700 group-hover:text-white transition-all duration-300"
-                />
-              </div>
-
-              <style>{`
-                .group:hover svg {
-                  color: ${partner.color} !important;
-                  filter: drop-shadow(0 0 10px ${partner.color});
-                  transform: scale(1.1);
-                }
-              `}</style>
-
-              <span className="mt-4 text-[10px] font-bold tracking-widest text-gray-700 uppercase group-hover:text-white transition-colors duration-300 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0">
-                {partner.name}
-              </span>
+      <div className="relative flex overflow-hidden mask-gradient-x">
+        <motion.div
+          className="flex gap-12 lg:gap-20 items-center whitespace-nowrap"
+          animate={{ x: "-50%" }}
+          transition={{
+            repeat: Infinity,
+            ease: "linear",
+            duration: 40,
+            repeatType: "loop"
+          }}
+          style={{ width: "max-content" }}
+        >
+          {/* Double the list for seamless loop */}
+          {[...partners, ...partners].map((src, index) => (
+            <div key={index} className="flex-shrink-0 w-32 h-20 md:w-40 md:h-24 relative opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+              <img
+                src={src}
+                alt={`Partner ${index}`}
+                className="w-full h-full object-contain"
+              />
             </div>
           ))}
-        </div>
+        </motion.div>
+
+        {/* Gradient Masks */}
+        <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#111] to-transparent z-10" />
+        <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#111] to-transparent z-10" />
       </div>
     </section>
   );

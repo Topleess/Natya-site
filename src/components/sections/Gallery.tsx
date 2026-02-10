@@ -2,12 +2,13 @@ import React from 'react';
 import { useLanguage } from '../../context/LanguageContext';
 
 const photos = [
-  { id: 1, src: "https://picsum.photos/id/1011/600/800", alt: "Kayaking", type: "casual" },
-  { id: 2, src: "https://picsum.photos/id/1059/800/600", alt: "Speaking", type: "pro" },
-  { id: 3, src: "https://picsum.photos/id/1035/600/600", alt: "Hiking", type: "casual" },
-  { id: 4, src: "https://picsum.photos/id/106/800/600", alt: "Conference", type: "pro" },
-  { id: 5, src: "https://picsum.photos/id/28/600/800", alt: "Forest", type: "casual" },
-  { id: 6, src: "https://picsum.photos/id/180/600/600", alt: "Desk work", type: "pro" },
+  { id: 1, src: "/images/gallery-1.png", alt: "Event", type: "pro" },
+  { id: 2, src: "/images/gallery-2.png", alt: "Speaking", type: "pro" },
+  { id: 3, src: "/images/gallery-3.png", alt: "Conference", type: "pro" },
+  { id: 4, src: "/images/gallery-4.png", alt: "Meeting", type: "pro" },
+  { id: 5, src: "/images/gallery-5.jpg", alt: "Community", type: "casual" },
+  { id: 6, src: "/images/gallery-6.jpg", alt: "Work", type: "pro" },
+  { id: 7, src: "/images/gallery-7.jpg", alt: "Field Work", type: "casual" },
 ];
 
 export const Gallery: React.FC = () => {
