@@ -20,6 +20,11 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             cd /opt/stacks/natya-site
-            # Клонируем код прямо в папку стека, если его там нет, или обновляем
-            if [ -d ".git" ]; then git pull; else git clone https://github.com/${{ github.repository }} . ; fi
+            # Если папка пустая или нет .git, клонируем. Иначе тянем обновления.
+            if [ ! -d ".git" ]; then
+              git clone https://github.com/${{ github.repository }}.git .
+            else
+              git pull origin main
+            fi
+            # Собираем и запускаем
             docker compose up -d --build
