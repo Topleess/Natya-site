@@ -1,0 +1,25 @@
+name: Deploy Natya Site
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd /opt/stacks/natya-site
+            # Клонируем код прямо в папку стека, если его там нет, или обновляем
+            if [ -d ".git" ]; then git pull; else git clone https://github.com/${{ github.repository }} . ; fi
+            docker compose up -d --build
