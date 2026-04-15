@@ -8,6 +8,7 @@ import { Timeline } from './components/sections/Timeline';
 import { Footer } from './components/layout/Footer';
 import { Header } from './components/layout/Header';
 import { LanguageProvider } from './context/LanguageContext';
+import { Analytics } from '@vercel/analytics/react';
 
 function AppContent() {
   return (
@@ -22,6 +23,7 @@ function AppContent() {
         <Timeline />
       </main>
       <Footer />
+      <Analytics />
     </div>
   );
 }

@@ -11,7 +11,8 @@
       "Bash(npm run:*)",
       "mcp__Claude_Preview__preview_start",
       "Bash(curl -sL -o ecocareer-logo.jpg \"https://t.me/EcoCartaMsk\")",
-      "Bash(ls -la ecocareer-logo.*)"
+      "Bash(ls -la ecocareer-logo.*)",
+      "Bash(npm i:*)"
     ]
   }
 }
