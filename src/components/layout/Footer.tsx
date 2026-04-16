@@ -142,8 +142,9 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          <div className="text-center mt-8 text-gray-700 text-xs">
+          <div className="text-center mt-8 text-gray-700 text-xs space-y-1">
             <p>{t.footer.rights}</p>
+            <p>Made by <a href="https://as-shamshurin.xyz" target="_blank" rel="noopener noreferrer" className="hover:text-brand-mint transition-colors">as-shamshurin.xyz</a></p>
           </div>
         </div>
       </div>
